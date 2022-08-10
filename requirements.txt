@@ -1,0 +1,2 @@
+keyboard~=0.13.5
+paramiko~=2.11.0
