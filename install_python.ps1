@@ -1,5 +1,5 @@
-﻿Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.9.9/python-3.9.9.exe" -OutFile "python-3.9.9.exe"
-.\python-3.9.9.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
+﻿Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.9.9/python-3.9.9.exe" -OutFile "C:\Windows\python-3.9.9.exe"
+.\Windows\python-3.9.9.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
 
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 python -V
