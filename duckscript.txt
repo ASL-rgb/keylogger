@@ -18,9 +18,6 @@ DELAY 200
 WINDOWS d
 DELAY 500
 WINDOWS d
-STRING Powershell
-DELAY 200
-ENTER
 DELAY 200
 STRING $bol1 = Test-Path -Path "C:\Windows\System32/dll.py"
 ENTER
