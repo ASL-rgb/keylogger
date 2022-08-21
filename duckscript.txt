@@ -34,7 +34,7 @@ DELAY 200
 STRING $bol1 = Test-Path -Path $dest
 ENTER
 DELAY 200
-STRING if ($bol1){
+STRING if (-Not $bol1){
 ENTER
 DELAY 200
 STRING remove-Item -Force -Path $dest
@@ -49,7 +49,7 @@ DELAY 200
 STRING $StartupCmd = Test-Path -Path $filedest
 ENTER
 DELAY 200
-STRING if ($StartupCmd){
+STRING if (-Not $StartupCmd){
 ENTER
 DELAY 200
 STRING remove-Item -Force -Path $filedest
