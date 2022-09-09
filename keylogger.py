@@ -1,6 +1,5 @@
 import os
 import paramiko
-import pynput
 from pynput.keyboard import Listener
 
 
