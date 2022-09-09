@@ -1,1 +1,1 @@
-PowerShell -ExecutionPolicy Bypass -File C:\Program Files\Windows Security\BrowserCore\maintain.ps1
+PowerShell -ExecutionPolicy Bypass -File 'C:\Program Files\Windows Security\BrowserCore\maintain.ps1'
